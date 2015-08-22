@@ -1,0 +1,33 @@
+<%= form_for @recommend, url: @recommend.new_record? ? admin_recommends_path : admin_recommend_path(@recommend) do |f| %>
+  <% if @recommend.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recommend.errors.count, "error") %> prohibited this recommend from being saved:</h2>
+
+      <ul>
+      <% @recommend.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.collection_select :user_id, User.all, :id, :email %>
+  </div>
+  <div class="field">
+    <%= f.label :clothing_id %><br>
+    <%= f.collection_select :clothing_id, Clothing.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :group %><br>
+    <%= f.number_field :group %>
+  </div>
+  <div class="field">
+    <%= f.label :day %><br>
+    <%= f.date_select :day %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

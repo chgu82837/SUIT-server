@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Clothings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Attrs</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clothings.each do |clothing| %>
+      <tr>
+        <td><%= clothing.name %></td>
+        <td><%= clothing.attrs.join(",") %></td>
+        <td><%= link_to 'Show', clothing %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

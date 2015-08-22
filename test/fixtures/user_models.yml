@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  tops_type: 1
+  tops_style: 1
+  tops_color: 1
+  bottoms_type: 1
+  bottoms_style: 1
+  bottoms_color: 1
+  priority: 1
+
+two:
+  user_id: 1
+  tops_type: 1
+  tops_style: 1
+  tops_color: 1
+  bottoms_type: 1
+  bottoms_style: 1
+  bottoms_color: 1
+  priority: 1

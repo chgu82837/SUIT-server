@@ -1,0 +1,29 @@
+<%= form_for @clothing_attr, url: @clothing_attr.new_record? ? admin_clothing_attrs_path : admin_clothing_attr_path(@clothing_attr) do |f| %>
+  <% if @clothing_attr.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@clothing_attr.errors.count, "error") %> prohibited this clothing_attr from being saved:</h2>
+
+      <ul>
+      <% @clothing_attr.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :clothing_id %><br>
+    <%= f.collection_select(:clothing_id, Clothing.all, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :clothingField_id %><br>
+    <%= f.collection_select(:clothing_field_id, ClothingField.all, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :value %><br>
+    <%= f.text_field :value %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

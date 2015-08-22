@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @clothing.name %>
+</p>
+<p>
+  <strong>Chosen:</strong>
+  <%= @clothing.chosen %>
+</p>
+<p>
+  <strong>Recommended:</strong>
+  <%= @clothing.recommended %>
+</p>
+<p>
+  <strong>Attrs:</strong>
+  <%= @clothing.attrs.join(",") %>
+</p>
+
+<%= link_to 'Edit', edit_admin_clothing_path(@clothing) %> |
+<%= link_to 'Back', admin_clothings_path %>

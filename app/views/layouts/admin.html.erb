@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Workspace</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <%= link_to 'Back to index', index_path %>
+  <%= link_to 'Clothing', admin_clothings_path %>
+  <%= link_to 'Clothing_attrs', admin_clothing_attrs_path %>
+  <%= link_to 'Clothing_fields', admin_clothing_fields_path %>
+  <%= link_to 'Recommends', admin_recommends_path %>
+  <%= link_to 'Users', admin_users_path %>
+  <%= link_to 'UserChoises', admin_user_choises_path %>
+  <%= link_to 'Wardrobes', admin_wardrobes_path %>
+
+  <%= yield %>
+
+</body>
+</html>

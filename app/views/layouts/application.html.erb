@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Workspace</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <%= link_to 'index', index_path %>
+  <%= link_to 'wardrobes', wardrobes_path %>
+  <%= link_to 'choises', user_choises_path %>
+  <%= link_to 'clothings', clothings_path %>
+
+  <% if user_signed_in? %>
+    <%= link_to 'logout', destroy_user_session_path %>
+  <% else %>
+    <%= link_to 'login', new_user_session_path %>
+  <% end %>
+
+  <%= yield %>
+
+</body>
+</html>

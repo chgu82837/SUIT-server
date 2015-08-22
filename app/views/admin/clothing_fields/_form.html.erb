@@ -1,0 +1,25 @@
+<%= form_for @clothing_field, url: @clothing_field.new_record? ? admin_clothing_fields_path : admin_clothing_field_path(@clothing_field) do |f| %>
+  <% if @clothing_field.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@clothing_field.errors.count, "error") %> prohibited this clothing_field from being saved:</h2>
+
+      <ul>
+      <% @clothing_field.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :func %><br>
+    <%= f.text_field :func %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

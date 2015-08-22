@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User_id:</strong>
+  <%= @user_choise.user_id %>
+</p>
+
+<p>
+  <strong>Clothing_id:</strong>
+  <%= @user_choise.clothing_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= User.find(@user_choise.user_id).email %>
+</p>
+
+<p>
+  <strong>Clothing:</strong>
+  <%= Clothing.find(@user_choise.clothing_id).name %>
+</p>
+
+<p>
+  <strong>Liked:</strong>
+  <%= @user_choise.liked %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @user_choise.time %>
+</p>
+
+<%= link_to 'Edit', edit_admin_user_choise_path(@user_choise) %> |
+<%= link_to 'Back', admin_user_choises_path %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Clothings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Attrs</th>
+      <th>chosen</th>
+      <th>recommended</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clothings.each do |clothing| %>
+      <tr>
+        <td><%= clothing.name %></td>
+        <td><%= clothing.attrs.join(",") %></td>
+        <td><%= clothing.chosen %></td>
+        <td><%= clothing.recommended %></td>
+        <td><%= link_to 'Show', admin_clothing_path(clothing) %></td>
+        <td><%= link_to 'Edit', edit_admin_clothing_path(clothing) %></td>
+        <td><%= link_to 'Destroy', admin_clothing_path(clothing), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Clothing', new_admin_clothing_path %>

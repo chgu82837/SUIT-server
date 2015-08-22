@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Recommends</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Clothing</th>
+      <th>Group</th>
+      <th>Day</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recommends.each do |recommend| %>
+      <tr>
+        <td><%= recommend.user_id %></td>
+        <td><%= recommend.clothing_id %></td>
+        <td><%= recommend.group %></td>
+        <td><%= recommend.day %></td>
+        <td><%= link_to 'Show', admin_recommend_path(recommend) %></td>
+        <td><%= link_to 'Edit', edit_admin_recommend_path(recommend) %></td>
+        <td><%= link_to 'Destroy', admin_recommend_path(recommend), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recommend', new_admin_recommend_path %>

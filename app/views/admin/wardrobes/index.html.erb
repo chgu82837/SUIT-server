@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Wardrobes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Clothing</th>
+      <th>User</th>
+      <th>chosen</th>
+      <th>recommended</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wardrobes.each do |wardrobe| %>
+      <tr>
+        <td><%= wardrobe.clothing_id %></td>
+        <td><%= wardrobe.user_id %></td>
+        <td><%= wardrobe.chosen %></td>
+        <td><%= wardrobe.recommended %></td>
+        <td><%= link_to 'Show', admin_wardrobe_path(wardrobe) %></td>
+        <td><%= link_to 'Edit', edit_admin_wardrobe_path(wardrobe) %></td>
+        <td><%= link_to 'Destroy', admin_wardrobe_path(wardrobe), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wardrobe', new_admin_wardrobe_path %>

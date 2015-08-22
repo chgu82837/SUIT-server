@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @clothing_field.name %>
+</p>
+
+<p>
+  <strong>Func:</strong>
+  <%= @clothing_field.func %>
+</p>
+
+<%= link_to 'Edit', edit_admin_clothing_field_path(@clothing_field) %> |
+<%= link_to 'Back', admin_clothing_fields_path %>

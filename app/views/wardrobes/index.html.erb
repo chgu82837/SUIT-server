@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Wardrobe Clothings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Attrs</th>
+      <th>chosen</th>
+      <th>recommended</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wardrobes.each do |wardrobe| %>
+      <tr>
+        <td><%= wardrobe.clothe.name %></td>
+        <td><%= wardrobe.clothe.attrs.join(",") %></td>
+        <td><%= wardrobe.chosen %></td>
+        <td><%= wardrobe.recommended %></td>
+        <td><%= link_to 'Show', wardrobe_path(wardrobe) %></td>
+        <td><%= link_to 'Destroy', wardrobe_path(wardrobe), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wardrobe', new_wardrobe_path %>

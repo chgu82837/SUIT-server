@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @wardrobe.clothe.name %>
+</p>
+
+<p>
+  <strong>Attrs:</strong>
+  <%= @wardrobe.clothe.attrs.join(",") %>
+</p>
+
+<p>
+  <strong>chosen:</strong>
+  <%= @wardrobe.chosen %>
+</p>
+
+<p>
+  <strong>recommended:</strong>
+  <%= @wardrobe.recommended %>
+</p>
+
+<%= link_to 'Back', wardrobes_path %>

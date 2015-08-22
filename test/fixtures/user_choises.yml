@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  clothing_id: 1
+  liked: 1
+  time: 2015-08-19
+
+two:
+  user_id: 1
+  clothing_id: 1
+  liked: 1
+  time: 2015-08-19

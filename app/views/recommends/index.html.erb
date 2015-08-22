@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Recommended Clothings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Attrs</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recommends.each do |group,recommends| %>
+      <tr>
+        <td colspan="3">Group <%= group %></td>
+      </tr>
+      <% recommends.each do |recommend| %>
+      <tr>
+        <td><%= recommend.clothe.name %></td>
+        <td><%= recommend.clothe.attrs.join(",") %></td>
+        <td><%= link_to 'Show', clothing_path(recommend.clothe.id) %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

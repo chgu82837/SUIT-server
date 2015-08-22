@@ -1,0 +1,2 @@
+module ClothingAttrsHelper
+end
