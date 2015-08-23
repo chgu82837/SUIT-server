@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :user_choises, only:[:index,:show,:create,:new]
   resources :clothings, only:[:index,:show]
 
-  devise_for :users, controllers: { :registrations => "users/registrations" }
+  devise_for :users, controllers: { :registrations => "users/registrations", sessions: 'users/sessions' }
 
   namespace :admin,path: Rails.application.secrets["admin_path"] do
     root 'admin#index'
